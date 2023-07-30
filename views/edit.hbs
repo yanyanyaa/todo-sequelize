@@ -1,0 +1,15 @@
+<div class="col-auto mt-5" style="background-color: #acafd7;">
+  <form action="/todos/{{ todo.id }}?_method=PUT" method="POST" style="display: inline;">
+    <div class="input-group">
+      <div class="input-group-text">
+        <input class="form-check-input mt-0" type="checkbox" name="isDone" {{#if todo.isDone }} checked {{/if}}>
+      </div>
+      <input class="form-control" type="text" placeholder="name" name="name" value="{{ todo.name }}">
+      <button class="btn text-light" type="submit" style="background-color:#778ec9">Save</button>
+    </div>
+  </form>
+</div>
+
+<div class="d-flex justify-content-end mt-5">
+  <a class="btn btn-sm text-light" href="/" style="background-color:#a5acbf">back</a>
+</div>

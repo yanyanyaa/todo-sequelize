@@ -1,10 +1,17 @@
-<form action="/todos/{{ todo.id }}?_method=DELETE" method="POST" class="d-inline">
-  <div class="input-group">
-    <div class="input-group-text">
-      <input type="checkbox" class="form-check-input mt-0" name="isDone" {{#if todo.isDone }} checked {{/if}} disabled>
+<div class="col-auto mt-5" style="background-color: #acafd7;">
+  <form action="/todos/{{ todo.id }}?_method=DELETE" method="POST" style="display: inline;">
+    <div class="input-group">
+      <div class="input-group-text">
+        <input class="form-check-input mt-0" type="checkbox" name="isDone" {{#if todo.isDone }} checked {{/if}}
+          disabled>
+      </div>
+      <input class="form-control" type="text" placeholder="name" name="name" value="{{ todo.name }}" disabled>
+      <a class="btn text-light" href="/todos/{{ todo.id }}/edit" style="background-color:#82a9c9">edit</a>
+      <button class="btn text-light" type="submit" style="background-color:#c98888">delete</button>
     </div>
-    <input class="form-control" type="text" placeholder="name" name="name" value="{{ todo.name }}" disabled>
-    <a class="btn btn-success" href="/todos/{{ todo.id }}/edit">edit</a>
-    <button class="btn btn-danger" type="submit">delete</button>
-  </div>
-</form>
+  </form>
+</div>
+
+<div class="d-flex justify-content-end mt-5">
+  <a class="btn btn-sm text-light" href="/" style="background-color:#a5acbf">back</a>
+</div>
