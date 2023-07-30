@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
+const bcrypt = require('bcryptjs')
 
 const db = require('../../models')
 const Todo = db.Todo
@@ -50,7 +51,7 @@ router.post('/register', (req, res) => {
 
 // logout
 router.get('/logout', (req, res) => {
-  res.send('logout')
+  req.logout()
   res.redirect('/users/login')
 })
 
